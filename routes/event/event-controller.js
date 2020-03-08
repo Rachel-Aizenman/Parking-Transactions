@@ -51,7 +51,7 @@ EventController.prototype.start = function(req, res) {
   }).then(function(data){
     res.json(data);
   });
-
+  
 };
 
 module.exports = EventController;

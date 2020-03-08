@@ -6,10 +6,11 @@
     "start": "node server"
   },
   "dependencies": {
+    "body-parser": "1.15.2",
+    "cookie-parser": "1.4.3",
     "express": "4.14.0",
     "express-session": "1.14.2",
-    "body-parser": "1.15.2",
-    "cookie-parser": "1.4.3"
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "livereload": "^0.6.2"

@@ -37,7 +37,10 @@ module.exports = function(app) {
   // ROUTES
   // =========================================================================
   app.use('/', express.static(process.cwd() + '/client'));
+
   app.use('/api/event', require('./routes/event/event-router'))
+
+
 
   return router;
 
