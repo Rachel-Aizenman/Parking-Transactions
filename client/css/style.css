@@ -33,16 +33,10 @@ body {
 }
 
 table{
+  height: 100%;
   width: 100%;
+  border-collapse: collapse;
 }
-
-tr, td{
-     padding: 12px;
-     border: 1px solid lightsalmon;
-     text-align: center;
-
-}
-
 
 
 
@@ -50,6 +44,25 @@ tr, td{
 /* LAYOUT
 /*******************************************/
 
+th, td{
+     text-align: center ;
+     border-top: 1px solid #ECF0F1;
+    padding: 10px;
+
+}
+   
+th{
+     background-color: #4ECDC4;
+     font-weight: bold;
+   }
+
+.red{
+        background-color:  rgba(253, 18, 18, 0.306);
+   }
+
+.blue{
+     background-color: rgba(138, 214, 209, 0.306);
+}
 
 /******************************************
 /* ADDITIONAL STYLES
