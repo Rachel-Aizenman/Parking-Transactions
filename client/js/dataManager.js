@@ -15,11 +15,11 @@ class DataManager {
 
     getPrice = (transaction) => {
         let charge
-        const duration = this.getDuration(transaction) - 1
-        if (duration < 0) {
+        let duration = transaction.promo ? this.getDuration(transaction) - 3 : this.getDuration(transaction) - 1
+        if (duration <= 0) {
             charge = 'No Charge'
         } else {
-            charge = '$' + Math.round((Math.ceil(duration) * 2.99 + Number.EPSILON) * 100) / 100
+            charge = '$' + Math.round((Math.ceil(duration) * 2.99) * 100) / 100
         }
 
         return charge
