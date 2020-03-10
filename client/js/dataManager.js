@@ -1,5 +1,7 @@
 class DataManager {
-    constructor() { }
+    constructor() { 
+        duration: ''
+    }
 
     formatDate = (date) => {
         const formattedDate = moment(date).format('L LT')
@@ -19,7 +21,7 @@ class DataManager {
         if (duration < 0) {
             charge = 'No Charge'
         } else {
-            charge = '$' +  Math.round((Math.ceil(duration) * 2.99 + Number.EPSILON) * 100) / 100
+            charge = '$' + Math.round((Math.ceil(duration) * 2.99 + Number.EPSILON) * 100) / 100
         }
 
         return charge
@@ -27,13 +29,25 @@ class DataManager {
 
     getClassName = (car) => {
         let className = ''
-        if(this.getDuration(car) >= 24){
+        if (this.getDuration(car) >= 24) {
             className = 'red'
-        } 
-        if(this.getDuration(car) < 1){
+        }
+        if (this.getDuration(car) < 1) {
             className = 'blue'
-        } 
+        }
         return className
+    }
+
+    getPromotion = (car) => {
+        let duration = this.getDuration(car) 
+        if(car.promotion) {
+            console.log(duration)
+            console.log(duration - 1)
+            let newDuration = duration - 1
+            return newDuration
+        } 
+        return car.promotion
+       
     }
 
 
