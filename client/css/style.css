@@ -32,28 +32,47 @@ body {
      background: #FFF;
 }
 
-table{
-  height: 100%;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+h1{
+     color:#4ECDC4;  
+     font-family:Tahoma;
+     text-align: center;
+     font-size:60px;
+     line-height:50px;
+     font-weight:100;
+     top: 0;
+  
+}
+
+table{
+     margin-top: 4px;
+     height: 100%;
+     width: 100%;
+     border-collapse: collapse;
+     
+   }
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
 th, td{
-     text-align: center ;
+     text-align: center;
      border-top: 1px solid #ECF0F1;
     padding: 10px;
+    
 
 }
    
 th{
      background-color: #4ECDC4;
      font-weight: bold;
+     
    }
 
 .red{
@@ -64,9 +83,6 @@ th{
      background-color: rgba(138, 214, 209, 0.306);
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
 @media screen and (max-width:768px){
 
 }

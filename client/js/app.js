@@ -1,8 +1,8 @@
 const dataManager = new DataManager();
 
-function fillTable(cars) {
+function fillTable(transactions) {
     const table = document.querySelector('table');
-    cars.forEach((car, i) => {
+    transactions.forEach((transaction, i) => {
         var row = table.insertRow();
         var license = row.insertCell(0);
         var price = row.insertCell(1);
@@ -11,19 +11,18 @@ function fillTable(cars) {
         var out = row.insertCell(4);
 
 
-        license.innerHTML = car.license;
-        arrival.innerHTML = dataManager.formatDate(car.in);
-        price.innerHTML = dataManager.getPrice(car)
-        duration.innerHTML = dataManager.getDuration(car)
-        out.innerHTML = dataManager.formatDate(car.out);
-        row.className = dataManager.getClassName(car)
-
+        license.innerHTML = transaction.license;
+        arrival.innerHTML = dataManager.formatDate(transaction.in);
+        price.innerHTML = dataManager.getPrice(transaction)
+        duration.innerHTML = dataManager.getDuration(transaction)
+        out.innerHTML = dataManager.formatDate(transaction.out);
+        row.className = dataManager.getClassName(transaction)
     });
 }
 
 
-function sortByDate(cars) {
-    const sorted = cars.sort(function (a, b) {
+function sortByDate(transactions) {
+    const sorted = transactions.sort(function (a, b) {
         return a.out - b.out;
     });
     fillTable(sorted)

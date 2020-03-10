@@ -1,23 +1,21 @@
 class DataManager {
-    constructor() { 
-        duration: ''
-    }
+   
 
     formatDate = (date) => {
         const formattedDate = moment(date).format('L LT')
         return formattedDate
     }
 
-    getDuration = (car) => {
-        const arrival = moment(car.in).format('L LT')
-        const out = moment(car.out).format('L LT')
+    getDuration = (transaction) => {
+        const arrival = moment(transaction.in).format('L LT')
+        const out = moment(transaction.out).format('L LT')
         const duration = moment(out).diff(arrival, 'hours', true).toFixed(2)
         return duration
     }
 
-    getPrice = (car) => {
+    getPrice = (transaction) => {
         let charge
-        const duration = this.getDuration(car) - 1
+        const duration = this.getDuration(transaction) - 1
         if (duration < 0) {
             charge = 'No Charge'
         } else {
@@ -27,26 +25,26 @@ class DataManager {
         return charge
     }
 
-    getClassName = (car) => {
+    getClassName = (transaction) => {
         let className = ''
-        if (this.getDuration(car) >= 24) {
+        if (this.getDuration(transaction) >= 24) {
             className = 'red'
         }
-        if (this.getDuration(car) < 1) {
+        if (this.getDuration(transaction) < 1) {
             className = 'blue'
         }
         return className
     }
 
-    getPromotion = (car) => {
-        let duration = this.getDuration(car) 
-        if(car.promotion) {
+    getPromotion = (transaction) => {
+        let duration = this.getDuration(transaction) 
+        if(transaction.promotion) {
             console.log(duration)
             console.log(duration - 1)
             let newDuration = duration - 1
             return newDuration
         } 
-        return car.promotion
+        return transaction.promotion
        
     }
 
