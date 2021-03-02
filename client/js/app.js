@@ -32,8 +32,6 @@ function promoGenerator(transactions){
 
 }
 
-
-
 function sortByDate(transactions) {
     const sorted = transactions.sort(function (a, b) {
         return a.out - b.out;

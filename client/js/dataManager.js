@@ -39,8 +39,6 @@ class DataManager {
     getPromotion = (transaction) => {
         let duration = this.getDuration(transaction) 
         if(transaction.promotion) {
-            console.log(duration)
-            console.log(duration - 1)
             let newDuration = duration - 1
             return newDuration
         } 
